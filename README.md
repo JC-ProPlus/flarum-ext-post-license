@@ -1,5 +1,5 @@
 # Post License
 
-This is a work in progress for a tutorial.
+This is a work originally created by @clarkwinkelmann.
 
-I'll probably publish this extension on Packagist once the tutorial is online.
+I forked his repo and compiled those JavaScript files. Thanks Clark for his work!
