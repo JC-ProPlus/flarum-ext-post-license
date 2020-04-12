@@ -1,6 +1,6 @@
 {
-    "name": "clarkwinkelmann/post-license",
-    "description": "Choose license of posts",
+    "name": "wvbforum/post-license",
+    "description": "Choose license of posts.",
     "keywords": [
         "flarum"
     ],
@@ -18,16 +18,16 @@
     ],
     "autoload": {
         "psr-4": {
-            "ClarkWinkelmann\\PostLicense\\": "src/"
+            "WvbForum\\PostLicense\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
             "title": "Post License",
             "icon": {
-                "name": "",
-                "backgroundColor": "",
-                "color": ""
+                "name": "fab fa-creative-commons-sa",
+                "backgroundColor": "#2196f3",
+                "color": "#ffffff"
             }
         },
         "flagrow": {

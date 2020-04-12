@@ -1,6 +1,6 @@
 <?php
 
-namespace ClarkWinkelmann\PostLicense\Listeners;
+namespace WvbForum\PostLicense\Listeners;
 
 use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\ForumSerializer;
@@ -22,9 +22,9 @@ class ForumAttributes
              */
             $settings = app(SettingsRepositoryInterface::class);
 
-            $event->attributes['clarkwinkelmann-post-license.require-license'] = (bool)$settings->get('clarkwinkelmann-post-license.require-license');
-            $event->attributes['clarkwinkelmann-post-license.allow-custom-license'] = (bool)$settings->get('clarkwinkelmann-post-license.allow-custom-license');
-            $event->attributes['clarkwinkelmann-post-license.enabled-licenses'] = json_decode($settings->get('clarkwinkelmann-post-license.enabled-licenses', '[]'));
+            $event->attributes['wvbforum-post-license.require-license'] = (bool)$settings->get('wvbforum-post-license.require-license');
+            $event->attributes['wvbforum-post-license.allow-custom-license'] = (bool)$settings->get('wvbforum-post-license.allow-custom-license');
+            $event->attributes['wvbforum-post-license.enabled-licenses'] = json_decode($settings->get('wvbforum-post-license.enabled-licenses', '[]'));
         }
     }
 }

@@ -8,36 +8,36 @@ import EditPostComposer from 'flarum/components/EditPostComposer';
 import LicenseMeta from './components/LicenseMeta';
 
 function addLicenseField(ComposerComponent) {
-    ComposerComponent.prototype.clarkWinkelmannPostLicense = null;
+    ComposerComponent.prototype.wvbforumPostLicense = null;
 
     extend(ComposerComponent.prototype, 'headerItems', function (items) {
-        items.add('clarkwinkelmann-post-license', LicensePicker.component({
-            license: this.clarkWinkelmannPostLicense,
+        items.add('wvbforum-post-license', LicensePicker.component({
+            license: this.wvbforumPostLicense,
             onchange: license => {
-                this.clarkWinkelmannPostLicense = license;
+                this.wvbforumPostLicense = license;
             },
         }));
     });
 
     extend(ComposerComponent.prototype, 'data', function (data) {
-        data.clarkWinkelmannPostLicense = this.clarkWinkelmannPostLicense;
+        data.wvbforumPostLicense = this.wvbforumPostLicense;
     });
 }
 
-app.initializers.add('clarkwinkelmann/post-license', () => {
+app.initializers.add('wvbforum/post-license', () => {
     addLicenseField(ReplyComposer);
     addLicenseField(EditPostComposer);
     addLicenseField(DiscussionComposer);
 
     extend(EditPostComposer.prototype, 'init', function () {
-        this.clarkWinkelmannPostLicense = this.props.post.attribute('clarkWinkelmannPostLicense');
+        this.wvbforumPostLicense = this.props.post.attribute('wvbforumPostLicense');
     });
 
     extend(CommentPost.prototype, 'headerItems', function (items) {
-        const license = this.props.post.attribute('clarkWinkelmannPostLicense');
+        const license = this.props.post.attribute('wvbforumPostLicense');
 
         if (license) {
-            items.add('clarkwinkelmann-post-license', LicenseMeta.component({
+            items.add('wvbforum-post-license', LicenseMeta.component({
                 license,
             }));
         }

@@ -1,8 +1,8 @@
 <?php
 
-namespace ClarkWinkelmann\PostLicense\Listeners;
+namespace WvbForum\PostLicense\Listeners;
 
-use ClarkWinkelmann\PostLicense\Validators\LicenseValidator;
+use WvbForum\PostLicense\Validators\LicenseValidator;
 use Flarum\Post\Event\Saving;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -20,12 +20,12 @@ class SaveLicense
          */
         $validator = app(LicenseValidator::class);
 
-        $license = array_get($event->data, 'attributes.clarkWinkelmannPostLicense');
+        $license = array_get($event->data, 'attributes.wvbforumPostLicense');
 
         $validator->assertValid([
             'license' => $license,
         ]);
 
-        $event->post->clarkwinkelmann_post_license = $license;
+        $event->post->wvbforum_post_license = $license;
     }
 }

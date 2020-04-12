@@ -1,6 +1,6 @@
 <?php
 
-namespace ClarkWinkelmann\PostLicense;
+namespace WvbForum\PostLicense;
 
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
