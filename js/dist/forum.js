@@ -177,17 +177,17 @@ var LicenseMeta = /*#__PURE__*/function (_Component) {
 
   _proto.shortName = function shortName() {
     if (!this.license) {
-      return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-meta.custom');
+      return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-meta.custom');
     }
 
-    return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-meta.label', {
+    return flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-meta.label', {
       license: this.license.licenseId
     });
   };
 
   _proto.details = function details() {
     if (!this.license) {
-      return [m('p', m('em', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-meta.custom-explanation'))), m('p', this.props.license)];
+      return [m('p', m('em', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-meta.custom-explanation'))), m('p', this.props.license)];
     }
 
     return [m('h5', this.license.name), this.license.seeAlso.map(function (href) {
@@ -195,7 +195,7 @@ var LicenseMeta = /*#__PURE__*/function (_Component) {
         href: href,
         rel: 'nofollow',
         target: '_blank'
-      }, flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-meta.more'));
+      }, flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-meta.more'));
     })];
   };
 
@@ -240,7 +240,7 @@ var LicensePicker = /*#__PURE__*/function (_Component) {
   _proto.init = function init() {
     _Component.prototype.init.call(this);
 
-    this.options = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('clarkwinkelmann-post-license.enabled-licenses');
+    this.options = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('wvbforum-post-license.enabled-licenses');
   };
 
   _proto.view = function view() {
@@ -248,17 +248,17 @@ var LicensePicker = /*#__PURE__*/function (_Component) {
 
     var isPreselectedOption = this.props.license === null || this.options.indexOf(this.props.license) > -1;
     var options = {
-      select: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-picker.' + (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('clarkwinkelmann-post-license.require-license') ? 'select' : 'default'))
+      select: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-picker.' + (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('wvbforum-post-license.require-license') ? 'select' : 'default'))
     };
     this.options.forEach(function (license) {
       options[license] = license;
     });
 
-    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('clarkwinkelmann-post-license.allow-custom-license')) {
-      options['custom'] = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-picker.custom');
+    if (flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.forum.attribute('wvbforum-post-license.allow-custom-license')) {
+      options['custom'] = flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-picker.custom');
     }
 
-    return m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('clarkwinkelmann-post-license.forum.license-picker.label')), flarum_components_Select__WEBPACK_IMPORTED_MODULE_3___default.a.component({
+    return m('.Form-group', [m('label', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans('wvbforum-post-license.forum.license-picker.label')), flarum_components_Select__WEBPACK_IMPORTED_MODULE_3___default.a.component({
       options: options,
       value: this.props.license === null ? 'select' : isPreselectedOption ? this.props.license : 'custom',
       onchange: function onchange(value) {
@@ -318,34 +318,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addLicenseField(ComposerComponent) {
-  ComposerComponent.prototype.clarkWinkelmannPostLicense = null;
+  ComposerComponent.prototype.wvbforumPostLicense = null;
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(ComposerComponent.prototype, 'headerItems', function (items) {
     var _this = this;
 
-    items.add('clarkwinkelmann-post-license', _components_LicensePicker__WEBPACK_IMPORTED_MODULE_3__["default"].component({
-      license: this.clarkWinkelmannPostLicense,
+    items.add('wvbforum-post-license', _components_LicensePicker__WEBPACK_IMPORTED_MODULE_3__["default"].component({
+      license: this.wvbforumPostLicense,
       onchange: function onchange(license) {
-        _this.clarkWinkelmannPostLicense = license;
+        _this.wvbforumPostLicense = license;
       }
     }));
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(ComposerComponent.prototype, 'data', function (data) {
-    data.clarkWinkelmannPostLicense = this.clarkWinkelmannPostLicense;
+    data.wvbforumPostLicense = this.wvbforumPostLicense;
   });
 }
 
-flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('clarkwinkelmann/post-license', function () {
+flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializers.add('wvbforum/post-license', function () {
   addLicenseField(flarum_components_ReplyComposer__WEBPACK_IMPORTED_MODULE_4___default.a);
   addLicenseField(flarum_components_EditPostComposer__WEBPACK_IMPORTED_MODULE_6___default.a);
   addLicenseField(flarum_components_DiscussionComposer__WEBPACK_IMPORTED_MODULE_2___default.a);
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_EditPostComposer__WEBPACK_IMPORTED_MODULE_6___default.a.prototype, 'init', function () {
-    this.clarkWinkelmannPostLicense = this.props.post.attribute('clarkWinkelmannPostLicense');
+    this.wvbforumPostLicense = this.props.post.attribute('wvbforumPostLicense');
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_0__["extend"])(flarum_components_CommentPost__WEBPACK_IMPORTED_MODULE_5___default.a.prototype, 'headerItems', function (items) {
-    var license = this.props.post.attribute('clarkWinkelmannPostLicense');
+    var license = this.props.post.attribute('wvbforumPostLicense');
 
     if (license) {
-      items.add('clarkwinkelmann-post-license', _components_LicenseMeta__WEBPACK_IMPORTED_MODULE_7__["default"].component({
+      items.add('wvbforum-post-license', _components_LicenseMeta__WEBPACK_IMPORTED_MODULE_7__["default"].component({
         license: license
       }));
     }
