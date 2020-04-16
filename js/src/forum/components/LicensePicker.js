@@ -6,26 +6,26 @@ export default class LicensePicker extends Component {
     init() {
         super.init();
 
-        this.options = app.forum.attribute('wvbforum-post-license.enabled-licenses');
+        this.options = app.forum.attribute('clarkWinkelmann-post-license.enabled-licenses');
     }
 
     view() {
         const isPreselectedOption = this.props.license === null || this.options.indexOf(this.props.license) > -1;
 
         let options = {
-            select: app.translator.trans('wvbforum-post-license.forum.license-picker.' + (app.forum.attribute('wvbforum-post-license.require-license') ? 'select' : 'default')),
+            select: app.translator.trans('clarkWinkelmann-post-license.forum.license-picker.' + (app.forum.attribute('clarkWinkelmann-post-license.require-license') ? 'select' : 'default')),
         };
 
         this.options.forEach(license => {
             options[license] = license;
         });
 
-        if (app.forum.attribute('wvbforum-post-license.allow-custom-license')) {
-            options['custom'] = app.translator.trans('wvbforum-post-license.forum.license-picker.custom');
+        if (app.forum.attribute('clarkWinkelmann-post-license.allow-custom-license')) {
+            options['custom'] = app.translator.trans('clarkWinkelmann-post-license.forum.license-picker.custom');
         }
 
         return m('.Form-group', [
-            m('label', app.translator.trans('wvbforum-post-license.forum.license-picker.label')),
+            m('label', app.translator.trans('clarkWinkelmann-post-license.forum.license-picker.label')),
             Select.component({
                 options,
                 value: this.props.license === null ? 'select' : (isPreselectedOption ? this.props.license : 'custom'),

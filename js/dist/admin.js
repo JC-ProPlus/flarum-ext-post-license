@@ -143,8 +143,8 @@ var _common_licenses__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__web
 
 
 
-var settingsPrefix = 'wvbforum-post-license.';
-var translationPrefix = 'wvbforum-post-license.admin.settings.';
+var settingsPrefix = 'clarkWinkelmann-post-license.';
+var translationPrefix = 'clarkWinkelmann-post-license.admin.settings.';
 
 var LicenseSettingsModal = /*#__PURE__*/function (_SettingsModal) {
   Object(_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(LicenseSettingsModal, _SettingsModal);
@@ -190,7 +190,7 @@ var LicenseSettingsModal = /*#__PURE__*/function (_SettingsModal) {
     }))]), m('h3', flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans(translationPrefix + 'field.enabled-licenses')), m('.Form-group', [m('input[type=text].FormControl', {
       bidi: this.filter,
       placeholder: flarum_app__WEBPACK_IMPORTED_MODULE_1___default.a.translator.trans(translationPrefix + 'field.filter-licenses')
-    })]), m('.wvbforum__Post__Licenses', _common_licenses__WEBPACK_IMPORTED_MODULE_4__.licenses.map(function (license) {
+    })]), m('.clarkWinkelmann__Post__Licenses', _common_licenses__WEBPACK_IMPORTED_MODULE_4__.licenses.map(function (license) {
       if (filterValue && license.name.toLowerCase().indexOf(filterValue) === -1 && license.licenseId.toLowerCase().indexOf(filterValue) === -1) {
         return null;
       }
@@ -233,8 +233,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LicenseSettingsModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/LicenseSettingsModal */ "./src/admin/components/LicenseSettingsModal.js");
 
 
-flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('wvbforum/post-license', function () {
-  flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.extensionSettings['wvbforum-post-license'] = function () {
+flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('clarkWinkelmann/post-license', function () {
+  flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.extensionSettings['clarkWinkelmann-post-license'] = function () {
     return flarum_app__WEBPACK_IMPORTED_MODULE_0___default.a.modal.show(new _components_LicenseSettingsModal__WEBPACK_IMPORTED_MODULE_1__["default"]());
   };
 });
